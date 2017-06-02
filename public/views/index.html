@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+
+      console.log('jQuery Loaded');
+      var socket = io();
+
+      $('#message').keydown(function() {
+          var msg = this.value;
+          if(event.which === 13) {
+
+            console.log('Message: ' + msg);
+
+            socket.emit('msgToServer', msg);
+
+            $('#message').val('');
+
+          }
+      });
+
+      socket.on('msgToClients', (data) => {
+        console.log('Received new message: ' + data.message + ' from client: ' + data.id);
+        $('.messages').append(data.id + ':' + '\t' + data.message);
+      });
+
+    });
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <title>Tincan</title>
+</head>
+
+<body>
+
+    <label for="message">Enter Message: </label>
+    <input type="text" id="message" />
+
+    <hr />
+    <h2>Messages Received</h2>
+    <br />
+
+    <div class="messages">
+
+    </div>
+
+</body>
+
+</html>
