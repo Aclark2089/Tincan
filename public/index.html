@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"  />
+  <title>Tincan</title>
+</head>
+
+<body>
+
+  <div id="message-input">
+        <label for="message">Enter Message: </label>
+        <input type="text" id="message" />
+  </div>
+
+  <hr />
+  <h2>Messages Received</h2>
+  <br />
+
+  <div id="chatroom">
+
+      <div class="messages">
+
+      </div>
+
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="js/message_reception.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+</body>
+
+</html>
