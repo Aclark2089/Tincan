@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tincan",
+  "description": "Simple node.js chatroom using socket.io &amp; redis",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aclark2089/Tincan.git"
+  },
+  "author": "R. Alex Clark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aclark2089/Tincan/issues"
+  },
+  "homepage": "https://github.com/Aclark2089/Tincan#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.2"
+  }
+}
