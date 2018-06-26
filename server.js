@@ -22,10 +22,12 @@ http.listen(port, () => {
 });
 
 io.on('connection', (socket) => {
+  
   console.log('New client connection: ' + socket.id);
 
   socket.on('msgToServer', (msg) => {
     console.log("New msg: " + msg);
     io.emit('msgToClients', { message: msg, id: socket.id });
   })
+  
 });

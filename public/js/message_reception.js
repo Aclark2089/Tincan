@@ -3,8 +3,9 @@ $(document).ready(function() {
   console.log('jQuery Loaded');
   var socket = io();
 
-  $('#message').keydown(function() {
+  $('#message').keydown(function(event) {
     var msg = this.value;
+
     if (event.which === 13) {
 
       console.log('Message: ' + msg);
